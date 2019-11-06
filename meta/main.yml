@@ -31,7 +31,7 @@ allow_duplicates: true
 dependencies:
   - role: freehck.pkg_install
     vars:
-      pkg_install_list:
+      pkg_install_packages:
         - gpg-agent
     when:
       - ansible_distribution in [ 'Ubuntu', 'Debian' ]
