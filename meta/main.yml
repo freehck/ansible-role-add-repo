@@ -32,5 +32,6 @@ dependencies:
   - role: freehck.pkg_install
     vars:
       pkg_install_list:
-        - gpg_agent
-    when: ansible_distribution in [ 'Ubuntu', 'Debian' ]
+        - gpg-agent
+    when:
+      - ansible_distribution in [ 'Ubuntu', 'Debian' ]
