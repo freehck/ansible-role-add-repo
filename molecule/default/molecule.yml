@@ -2,7 +2,7 @@
 dependency:
   name: galaxy
   options:
-    role-file: roles/requirements.yml
+    role-file: molecule/default/roles/requirements.yml
 driver:
   name: docker
 lint:
