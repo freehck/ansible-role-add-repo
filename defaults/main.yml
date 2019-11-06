@@ -1,0 +1,7 @@
+---
+# add_repo_url and add_repo_string are aliases
+# add_repo_url: ""     # for Yum it's just an url so you can use this var name
+# add_repo_string: ""  # for APT it's not an url so you can use this var name
+add_repo_state: present  # absent
+# add_repo_name: ""
+# add_repo_key: ""

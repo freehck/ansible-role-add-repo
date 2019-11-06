@@ -1,0 +1,36 @@
+---
+galaxy_info:
+  author: Dmitrii Kashin
+  description: add repository
+  role_name: add_repo
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+
+  galaxy_tags:
+    - system
+    - repository
+    - apt
+    - yum
+
+allow_duplicates: true
+dependencies:
+  - role: freehck.pkg_install
+    vars:
+      pkg_install_list:
+        - gpg_agent
+    when: ansible_distribution in [ 'Ubuntu', 'Debian' ]

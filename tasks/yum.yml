@@ -1,0 +1,15 @@
+---
+
+- name: add repo key
+  rpm_key:
+    key: "{{ add_repo_key }}"
+    state: "{{ add_repo_state }}"
+  when: add_repo_key is defined
+
+- name: add repo
+  yum_repository:
+    baseurl: "{{ add_repo_url | default( add_repo_string ) }}"
+    name: "{{ add_repo_name }}"
+    state: "{{ add_repo_state }}"
+    description: "{{ add_repo_name }}"
+    file: "{{ add_repo_name }}"

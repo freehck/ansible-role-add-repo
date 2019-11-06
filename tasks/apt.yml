@@ -1,0 +1,13 @@
+---
+
+- name: add repo key
+  apt_key:
+    url: "{{ add_repo_key }}"
+    state: "{{ add_repo_state }}"
+  when: add_repo_key is defined
+
+- name: add repo
+  apt_repository:
+    repo: "{{ add_repo_string | default( add_repo_url ) }}"
+    state: "{{ add_repo_state }}"
+    filename: "{{ add_repo_name }}"
